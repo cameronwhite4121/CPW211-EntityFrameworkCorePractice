@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,19 @@ namespace EntityFrameworkCorePractice
     /// Context is usually included as a suffix when making classes for
     /// databases.
     /// </summary>
-    internal class StudentContext : DbContext
+    public class StudentContext : DbContext
     {
+        public StudentContext()
+        {
+            
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            // Database = Name for the database
+            // Server = Server we are connecting to 
+            // Trusted connection = indicates the windows account will be used
+            options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EFCoreExample;Trusted_Connection=True;");
+        }
     }
 }
