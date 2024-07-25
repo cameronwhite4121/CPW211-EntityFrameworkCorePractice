@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace EntityFrameworkCorePractice
     /// Context is usually included as a suffix when making classes for
     /// databases.
     /// </summary>
-    internal class StudentContext
+    internal class StudentContext : DbContext
     {
     }
 }
