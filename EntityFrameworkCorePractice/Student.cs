@@ -15,5 +15,7 @@ namespace EntityFrameworkCorePractice
         public string? FullName {  get; set; }
 
         public DateOnly DateOfBirth {  get; set; }
+
+        public string Email { get; set; }
     }
 }
